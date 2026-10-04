@@ -405,13 +405,31 @@ Official VIP Signals &amp; Market Insights
 
 </div>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+ n.queue=[];t=b.createElement(e);t.async=!0;
+ t.src=v;s=b.getElementsByTagName(e)[0];
+ s.parentNode.insertBefore(t,s)}(window, document,'script',
+ 'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1068877462665771');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1068877462665771&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <script>
 /* ===== ONLY THESE 4 VALUES ARE EDITABLE ===== */
 const CONFIG = {
   CHANNEL_NAME: "PANKAJ BHARDWAJ WAY2LAABH",
   TELEGRAM_LINK: "https://t.me/+5ijTSSznwrxjYjJk",
   IMAGE_URL: "https://example.com/channel-photo.jpg",
-  PIXEL_ID: "000000000000000",
+  PIXEL_ID: "1068877462665771",
 };
 /* ============================================ */
 
@@ -424,31 +442,12 @@ document.querySelector('meta[name="description"]').setAttribute(
 document.getElementById("channelName").childNodes[0].nodeValue = CONFIG.CHANNEL_NAME + " ";
 document.getElementById("channelImage").src = CONFIG.IMAGE_URL;
 
-if (CONFIG.PIXEL_ID && CONFIG.PIXEL_ID !== "000000000000000") {
-  !function(f,b,e,v,n,t,s){
-    if(f.fbq)return;
-    n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];
-    t=b.createElement(e);
-    t.async=!0;
-    t.src=v;
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s);
-  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-  fbq('init', CONFIG.PIXEL_ID);
-  fbq('track', 'PageView');
-}
-
 function getTelegramDeepLink(url){
   try{
     const u = new URL(url);
 
     if(u.hostname.includes("t.me")){
-      let path = u.pathname.replace(/^\/+/,'');
+      let path = u.pathname.replace(/^\/+/, '');
       if(path.startsWith('+')){
         return "tg://join?invite=" + path.substring(1);
       }
